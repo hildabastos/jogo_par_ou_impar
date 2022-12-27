@@ -1,0 +1,45 @@
+import random
+
+def mensagem_de_apresentacao():
+    print('-=-' * 30)
+    print('VAMOS JOGAR PAR OU ÍMPAR')
+    print('-=-' * 30)
+
+def formatacao_de_mensagem():
+    print('-' * 30)
+
+mensagem_de_apresentacao()
+contagem = 0
+while True:
+    valor_pc = random.randint(0,10)
+    valor = int(input('Digite um valor de 0 a 10: '))
+    par_ou_impar = input(('Par ou Ímpar? [P/I] ')).upper().strip()
+    soma = valor_pc + valor
+    if par_ou_impar == 'P':
+        if soma % 2 == 0:
+            formatacao_de_mensagem()
+            print(f'Você jogou {valor} e o computador jogou {valor_pc}. Total de {soma} DEU PAR')
+            print('Você venceu!! \nVamos jogar novamente...')
+            formatacao_de_mensagem()
+            contagem += 1
+        else:
+            formatacao_de_mensagem()
+            print(f'Você jogou {valor} e o computador jogou {valor_pc}. Total de {soma} DEU ÍMPAR')
+            formatacao_de_mensagem()
+            print(f'Game Over! Você venceu {contagem} vezes.')
+            formatacao_de_mensagem()
+            break
+    if par_ou_impar == 'I':
+        if soma % 2 == 0:
+            formatacao_de_mensagem()
+            print(f'Você jogou {valor} e o computador jogou {valor_pc}. Total de {soma} DEU PAR')
+            formatacao_de_mensagem()
+            print('Você venceu!! \nVamos jogar novamente...')
+            formatacao_de_mensagem()
+            contagem += 1
+        else:
+            formatacao_de_mensagem()
+            print(f'Você jogou {valor} e o computador jogou {valor_pc}. Total de {soma} DEU ÍMPAR')
+            print(f'Game Over! Você perdeu {contagem} vezes.')
+            formatacao_de_mensagem()
+            break
